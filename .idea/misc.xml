@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="../../Library/Android/sdk/platforms/android-31/data/res/layout/simple_list_item_1.xml" value="0.15760869565217392" />
+        <entry key="app/src/main/res/drawable/ic_baseline_clear_24.xml" value="0.253125" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.125" />
+        <entry key="app/src/main/res/layout/activity_receta_gachas.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_receta_hummus.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_receta_tortilla.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_dashboard.xml" value="0.10815602836879433" />
+        <entry key="app/src/main/res/layout/fragment_dieta.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_lista_compras.xml" value="0.16304347826086957" />
+        <entry key="app/src/main/res/layout/fragment_recetas.xml" value="0.16893115942028986" />
+        <entry key="app/src/main/res/layout/item_compra.xml" value="0.375" />
+        <entry key="app/src/main/res/layout/lista_compras_fragment.xml" value="0.16893115942028986" />
+        <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.13333333333333333" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.125" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.125" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Proyecto00</string>
+    <string name="title_home">Dieta</string>
+    <string name="title_dashboard">Recetas</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="listacompras">Lista de compras</string>
+    <string name="desayuno"><b>Desayuno</b>\n\n 1 Plátano \n 20g de granola \n 20g de crema de cacauhete \n 10g de sésamo </string>
+    <string name="comida"> <b>Comida</b>\n\n 60g de Arroz \n 90g de Frijoles \n Verduras \n Ensalada </string>
+    <string name="merienda"><b>Merienda</b> n\n Gachas de avena \n 1 Plátano \n 100g de Arándanos \n 30g de castañas</string>
+    <string name="cena"><b>Cena</b>\n\n 2 tortillas rellenas </string>
+    <string name="ingredientes">Ingredientes</string>
+    <string name="mododepreparo">Modo de preparo</string>
+    <string name="ingredientesgacha">2 Cucharas de sopa de harina de avena\n250ml de leche de avena\n1 Platáno\n1 Cuchara de azúcar\n100gr de Fresas\n30gr de crema de Cacahuete </string>
+    <string name="mododepreparogacha"> Echa los copos de avena y la leche en un cazo u olla y cocina a fuego medio hasta que la avena esté lista (unos 10 ó 15 minutos), removiendo de vez en cuando.
+Sirve las gachas en dos boles y echa el azúcar moreno por encima, con el calor se derretirá como si fuera un sirope.\nAñade el plátano troceado, fresas y la crema de cacahuete .</string>
+    <string name="ingredienteshummus">40g de garbanzos cocidos\n1/2 ajo\n70g de aceite de oliva\n1 cuchara de tahini\n50ml de agua\n1/2 cucharadita de comino\n1 cucharadita de sal\nZumo de 1/2 limón</string>
+    <string name="mododepreparohummus">Ponemos los garbanzos escurridos en el vaso de la batidora. Añadimos la tahini, el ajo cortado en trozos, la sal, los cominos, la agua y el aceite. Trituramos bien hasta que quede una crema bien lisa, sin trozos visibles de garbanzos o ajo. Pasamos a un cuenco.</string>
+    <string name="ingredientestortilla">2 tortillas\n40g de garbanzos cocidos\n1/2 cebolla\n  tomates cereja\nEnsalada\n1/2 Pepino troceado\n1 cucharadita de Pimentón en polvo\n1 cucharadita de sal\n 1cucharadita de ajo en polvo\nAceite de Oliva\nSalsa Barbacoa</string>
+    <string name="mododepreparotortilla">Adornamos los garbanzos con Aceite de oliva, Sal, Pimentón y Ajo en polvo y los ponemos 10 min en el horno con la cebolla troceada. Después, añadimos en las tortillas los garbazos, la cebolla, la ensalada, los tomates, los pepinos y Salsa barbacoa y cerramos las tortillas con palillo. </string>
+</resources>
