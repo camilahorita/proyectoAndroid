@@ -85,11 +85,11 @@ public class ListaComprasFragment extends Fragment {
 
 
 //        ArrayAdapter adapter= new ArrayAdapter(getContext(), android.R.layout.simple_list_item_1 ,arrayOfItems);
-//        mDatabase = FirebaseDatabase.getInstance().getReference("Compras");
+         mDatabase = FirebaseDatabase.getInstance().getReference("Compras");
 //        listView = binding.listaCompras;
 //        ItemsAdapter adapter = new ItemsAdapter(getContext(), R.layout.item_compra, arrayOfItems);
 //        listView.setAdapter(adapter);
-//        btnAdd = binding.btnNuevoItem;
+//
 
 //        mDatabase.addValueEventListener(new ValueEventListener() {
 //            @Override
@@ -112,20 +112,24 @@ public class ListaComprasFragment extends Fragment {
 //
 //            }
 //        });
+        btnAdd = binding.btnNuevoItem;
 
+        btnAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mDatabase = FirebaseDatabase.getInstance().getReference("Compras");
+                EditText textoItem = binding.textoitem;
+                String campoItem = textoItem.getText().toString();
+                String id = mDatabase.push().getKey();
+                Compras item = new Compras(campoItem);
+                mDatabase.child(id).setValue(item);
+                Toast.makeText(getContext(), "Item añadido", Toast.LENGTH_SHORT).show();
+                textoItem.setText("");
 
-//        btnAdd.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                EditText textoItem = binding.textoitem;
-//                String campoItem = textoItem.getText().toString();
-//                String id = mDatabase.push().getKey();
-//                Compras item = new Compras(campoItem);
-//                mDatabase.child(id).setValue(item);
-//                Toast.makeText(getContext(), "Item añadido", Toast.LENGTH_LONG).show();
-//
-//            }
-//        });
+            }
+        });
+
+        btn
 
         return root;
 
