@@ -53,8 +53,6 @@ public class ListaComprasFragment extends Fragment {
         binding = FragmentListaComprasBinding.inflate(inflater, container, false);
 
         View root = binding.getRoot();
-
-//        ArrayList<Compras> arrayOfItems = new ArrayList<Compras>();
         listView = binding.listaCompras;
 
 
