@@ -53,6 +53,8 @@ public class ListaComprasFragment extends Fragment {
         binding = FragmentListaComprasBinding.inflate(inflater, container, false);
 
         View root = binding.getRoot();
+
+//        ArrayList<Compras> arrayOfItems = new ArrayList<Compras>();
         listView = binding.listaCompras;
 
 
@@ -68,9 +70,9 @@ public class ListaComprasFragment extends Fragment {
 
         adapter = new FirebaseListAdapter(options) {
             @Override
-            protected void populateView(@NonNull View v, @NonNull Object compras, int position) {
+            protected void populateView(@NonNull View v, @NonNull Object item, int position) {
                 EditText itemDaLista = v.findViewById(R.id.itemCompra);
-                Compras iCompra = (Compras) compras;
+                Compras iCompra = (Compras) item;
                 itemDaLista.setText(iCompra.getItem());
                 Button delete=(Button)v.findViewById(R.id.btnx);
 
@@ -83,8 +85,24 @@ public class ListaComprasFragment extends Fragment {
                         item.removeValue();
                     }
                 });
+
+                itemDaLista.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+                    @Override
+                    public void onFocusChange(View v, boolean hasFocus) {
+                        if(!hasFocus) {
+                            String text = itemDaLista.getText().toString();
+                            String id = mDatabase.getKey();
+                            DatabaseReference item = adapter.getRef(position).child("item");
+                            item.setValue(text);
+                        } else {
+
+                        }
+                    }
+                });
             }
         };
+
+
 
 
         listView.setAdapter(adapter);
@@ -115,6 +133,8 @@ public class ListaComprasFragment extends Fragment {
 
 
         return root;
+
+
     }
 
 }
