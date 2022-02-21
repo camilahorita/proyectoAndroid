@@ -11,6 +11,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -38,8 +39,10 @@ public class ListaComprasFragment extends Fragment {
     private ListaComprasViewModel listacomprasViewModel;
     private FragmentListaComprasBinding binding;
     ListView listView;
-    Button btnAdd;
+    Button btnAdd, btnDelete;
     private DatabaseReference mDatabase;
+    FirebaseListAdapter adapter;
+
 
 
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -65,12 +68,23 @@ public class ListaComprasFragment extends Fragment {
 
 
 
-        FirebaseListAdapter adapter = new FirebaseListAdapter(options) {
+        adapter = new FirebaseListAdapter(options) {
             @Override
             protected void populateView(@NonNull View v, @NonNull Object compras, int position) {
                 EditText itemDaLista = v.findViewById(R.id.itemCompra);
                 Compras iCompra = (Compras) compras;
                 itemDaLista.setText(iCompra.getItem());
+                Button delete=(Button)v.findViewById(R.id.btnx);
+
+
+                delete.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+
+                        DatabaseReference item=adapter.getRef(position) ;
+                        item.removeValue();
+                    }
+                });
             }
         };
 
@@ -81,37 +95,8 @@ public class ListaComprasFragment extends Fragment {
 
 
 
-    ;
-
-
-//        ArrayAdapter adapter= new ArrayAdapter(getContext(), android.R.layout.simple_list_item_1 ,arrayOfItems);
          mDatabase = FirebaseDatabase.getInstance().getReference("Compras");
-//        listView = binding.listaCompras;
-//        ItemsAdapter adapter = new ItemsAdapter(getContext(), R.layout.item_compra, arrayOfItems);
-//        listView.setAdapter(adapter);
-//
 
-//        mDatabase.addValueEventListener(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(@NonNull DataSnapshot snapshot) {
-//                for (DataSnapshot child : snapshot.getChildren()){
-//                    String item = (String) child.child("item").getValue();
-//                    String id = mDatabase.push().getKey();
-//                    Compras newItem = new Compras(item);
-//                    ArrayList<Compras> arrayOfItems = new ArrayList<Compras>();
-//                    ArrayAdapter adapter= new ArrayAdapter(getContext(), android.R.layout.simple_list_item_1 ,arrayOfItems);
-//                    adapter.add(newItem);
-////                    arrayOfItems.add(newItem);
-//                }
-//                adapter.notifyDataSetChanged();
-//
-//            }
-//
-//            @Override
-//            public void onCancelled(@NonNull DatabaseError error) {
-//
-//            }
-//        });
         btnAdd = binding.btnNuevoItem;
 
         btnAdd.setOnClickListener(new View.OnClickListener() {
@@ -129,28 +114,9 @@ public class ListaComprasFragment extends Fragment {
             }
         });
 
-        btn
+
 
         return root;
-
     }
-
-
-    //    public void NuevoItem(View view){
-//        EditText textoItem = binding.textoitem;
-//        String campoItem = textoItem.getText().toString();
-//        FirebaseDatabase database = FirebaseDatabase.getInstance();
-//        DatabaseReference myRef = database.getReference("Compras");
-//        myRef.setValue("Tomate");
-//        if(TextUtils.isEmpty(campoItem)){
-//            Toast.makeText(getContext(), "Introduce un item", Toast.LENGTH_LONG).show();
-//        }else {
-//            String id = mDatabase.push().getKey();
-//            Compras item = new Compras(id, campoItem);
-//
-//            mDatabase.child(id).setValue(item);
-//            Toast.makeText(getContext(), "Item añadido", Toast.LENGTH_LONG).show();
-//        }
-//    }
 
 }
